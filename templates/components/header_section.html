@@ -3,7 +3,7 @@
 	<div class="container">
 <div class="row align-items-center">
 	<div class="col-lg-2 col-md-3 col-6">
-		<a href="./" class="brand-wrap">
+		<a href="{% url 'home_page' %}" class="brand-wrap">
 			<img class="logo" src="{% static 'images/logo.png' %}">
 		</a> <!-- brand-wrap.// -->
 	</div>
@@ -13,16 +13,13 @@
 				<i class="fa fa-bars"></i> All category
 			</button>
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Machinery / Mechanical Parts / Tools </a>
-				<a class="dropdown-item" href="#">Consumer Electronics / Home Appliances </a>
-				<a class="dropdown-item" href="#">Auto / Transportation</a>
-				<a class="dropdown-item" href="#">Apparel / Textiles / Timepieces </a>
-				<a class="dropdown-item" href="#">Home & Garden / Construction / Lights </a>
-				<a class="dropdown-item" href="#">Beauty & Personal Care / Health </a>
+                {% for category in all_category %}
+                    <a class="dropdown-item" href="{% url 'product_by_category_link' category.slug %}">{{ category.category_name }}</a>
+                {% endfor %}
 			</div>
 		</div>  <!-- category-wrap.// -->
 	</div> <!-- col.// -->
-	<a href="./store.html" class="btn btn-outline-primary">Store</a>
+	<a href="{% url 'store_link' %}" class="btn btn-outline-primary">Store</a>
 	<div class="col-lg  col-md-6 col-sm-12 col">
 		<form action="#" class="search">
 			<div class="input-group w-100">
@@ -45,9 +42,9 @@
 							<a href="./register.html"> Register</a>
 						</div>
 					</div>
-					<a href="./cart.html" class="widget-header pl-3 ml-3">
+					<a href="{% url 'cart_view_link' %}" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-						<span class="badge badge-pill badge-danger notify">0</span>
+						<span class="badge badge-pill badge-danger notify">{{ cart_item_counter }}</span>
 					</a>
 				</div> <!-- widgets-wrap.// -->
 			</div> <!-- col.// -->

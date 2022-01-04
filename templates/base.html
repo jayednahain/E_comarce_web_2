@@ -42,7 +42,7 @@ $(document).ready(function() {
 </head>
 <body>
 {#--------------nav bar---------#}
-{% include 'components/header_section.html' %}
+{% include 'components/header_section.html' with all_category=all_category %}
 {#-----  banner -----#}
 
 {% block content %}
