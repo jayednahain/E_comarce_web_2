@@ -59,9 +59,10 @@
 		</div>
 	</div> <!-- row.// -->
 	<hr>
-    {% if product_data.stock < 0 %}
-        <h1>Product is Out of Stock</h1>
+    {% if product_data.stock == 0 %}
+        <h2 class="text">Product is Out of Stock</h2>
     {% else %}
+
         {% if cart_check %}
             <a href="" class="btn btn-success"> <span class="text">Added to cart</span> <i class="fas fa-check"></i>  </a>
             <a href="{% url 'cart_view_link' %}" class="btn btn-primary"> <span class="text">View Cart</span> <i class="fas fa-shopping-cart"></i>  </a>
