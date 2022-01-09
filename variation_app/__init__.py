@@ -1,0 +1,1 @@
+default_app_config = 'variation_app.apps.VaritaionSignalsConfig'
