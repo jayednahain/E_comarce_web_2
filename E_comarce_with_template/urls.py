@@ -8,7 +8,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home',include('home_app.urls')),
     path('store',include('store_app.urls')),
-    path('cart',include('cart_app.urls'))
+    path('cart',include('cart_app.urls')),
+    path('authentication',include('authentication_app.urls'))
     #path('store',include(('store_app.urls','store_app'),namespace='store_app')),
 ]
 
