@@ -38,8 +38,8 @@
 					<div class="widget-header">
 						<small class="title text-muted">Welcome guest!</small>
 						<div>
-							<a href="./signin.html">Sign in</a> <span class="dark-transp"> | </span>
-							<a href="./register.html"> Register</a>
+							<a href="{% url 'log_in_link' %}">Sign in</a> <span class="dark-transp"> | </span>
+							<a href="{% url 'register_link' %}"> Register</a>
 						</div>
 					</div>
 					<a href="{% url 'cart_view_link' %}" class="widget-header pl-3 ml-3">
