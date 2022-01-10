@@ -77,7 +77,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'E_comarce_with_template.wsgi.application'
-
+AUTH_USER_MODEL = 'authentication_app.Account'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
